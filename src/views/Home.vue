@@ -1,18 +1,41 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SelectBase
+      v-model="value"
+      :list="list"
+      search
+    />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import InputText from '../components/Form/Input/InputText';
+import SelectBase from '../components/Form/Select/SelectBase';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
-}
+    SelectBase,
+    InputText,
+  },
+  data() {
+    return {
+      value: [],
+      list: [
+        {
+          label: 'Один',
+          value: 'one',
+        },
+        {
+          label: 'Два',
+          value: 'two',
+        },
+        {
+          label: 'Три',
+          value: 'three',
+        },
+      ],
+    };
+  },
+};
 </script>
